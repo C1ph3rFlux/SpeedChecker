@@ -58,15 +58,18 @@ Prior to setting the cron job and executing the SpeedChecker script, you’ll ne
 * Download this repo if you haven’t and place the “speedchecker.py” script wherever you want it to run from.
 **Note:** You’ll need to modify the “os.system” (line 24) command in the script to call the location for your speedtest installation.
 * Test the “speedchecker.py” file to make sure it runs and properly calls the speedtest-cli application you installed. If not, you may need to modify the appropriate path in the python script. 
-* Create a cron job to call (and run) the script at whatever incremental value you want set. (I have the example option provided set to an hourly internal)
-`crontab -e`
+* Create a cron job to call (and run) the script at whatever incremental value you want set. (I have the example option provided set to an hourly interval)
+
+> crontab -e
+
 **Note:** Make sure to review the provided example, you’ll need to provide the full path for where the “speedchecker.py” file is located. You’ll also need to provide the full path for where you would like the log file to be stored.
+
 * Wait a couple hours and check your log file results to make sure the incremental test is being conducted and stored.
-* Accumulate results over the next month and then contact your ISP if the majority of results do not meet the expected outcome. I would personally ask for a credit to my next billing cycle for not meeting defined SLAs for the internet speeds you’re plaything for. 
+* Accumulate results over the next month and then contact your ISP if the majority of results do not meet the expected outcome. I would personally ask for a credit to my next billing cycle for not meeting defined SLAs for the internet speeds you’re paying for. 
 
 ## Recommended Implementation:
 
-The best use of this script is on a Raspberry Pi directly connected via ethernet (hard-plugged) to your router. That being said, you can also install it on any (NIX) based implementation and run it. That being said, I would still make sure you’re doing it from a system that’s directly plugged into your router. 
+The best use of this script is on a Raspberry Pi directly connected via ethernet (hard-plugged) to your router. That being said, you can also install it on any (NIX) based implementation and run it. I would still make sure you’re doing it from a system that’s directly plugged into your router. 
 
 Running this on a computer connected to your Wifi will provide tainted results… Meaning, there could be environmental things in your home causing a speed degradation rather than the speeds provided directly from your ISP. Being connected directly to the router will provide more realistic results, and can’t easily be argued away by your ISP.
 
