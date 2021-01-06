@@ -1,0 +1,1 @@
+0 * * * * /path/to/python /path/to/speedchecker.py >> /path/to/log/file/speedchecker.log
